@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:preferencias_usuario_app/src/widgets/widgets.dart';
+
 class HomePage extends StatelessWidget {
   static String routeName = 'home';
 
@@ -9,6 +11,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Preferencias de usuario'),
       ),
+      drawer: MenuWidget(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

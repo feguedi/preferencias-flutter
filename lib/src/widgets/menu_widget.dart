@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:preferencias_usuario_app/src/pages/pages.dart';
+import 'package:preferencias_usuario_app/src/settings/preferencias_usuario.dart';
 
 class MenuWidget extends StatelessWidget {
+  final prefs = new PreferenciasUsuario();
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -21,7 +24,8 @@ class MenuWidget extends StatelessWidget {
           ListTile(
             leading: Icon(
               Icons.pages,
-              color: Colors.blue,
+              // color: prefs.colorSecundario ? Colors.teal : Colors.blue,
+              color: Theme.of(context).accentColor,
             ),
             title: Text('Inicio'),
             onTap: () {
@@ -31,7 +35,7 @@ class MenuWidget extends StatelessWidget {
           ListTile(
             leading: Icon(
               Icons.party_mode,
-              color: Colors.blue,
+              color: prefs.colorSecundario ? Colors.teal : Colors.blue,
             ),
             title: Text('Party mode'),
             onTap: () {},
@@ -39,7 +43,7 @@ class MenuWidget extends StatelessWidget {
           ListTile(
             leading: Icon(
               Icons.people,
-              color: Colors.blue,
+              color: prefs.colorSecundario ? Colors.teal : Colors.blue,
             ),
             title: Text('Gente'),
             onTap: () {},
@@ -47,7 +51,7 @@ class MenuWidget extends StatelessWidget {
           ListTile(
             leading: Icon(
               Icons.settings,
-              color: Colors.blue,
+              color: prefs.colorSecundario ? Colors.teal : Colors.blue,
             ),
             title: Text('Ajustes'),
             onTap: () {
